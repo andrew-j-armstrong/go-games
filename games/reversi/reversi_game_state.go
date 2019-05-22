@@ -1,9 +1,9 @@
 package games_reversi
 
 import (
-	"github.com/carbon-12/go-extensions"
-	"github.com/carbon-12/go-games/base"
-	"github.com/carbon-12/go-reversi"
+	"github.com/andrew-j-armstrong/go-extensions"
+	"github.com/andrew-j-armstrong/go-games/base"
+	"github.com/andrew-j-armstrong/go-reversi"
 )
 
 type ReversiGameState struct {

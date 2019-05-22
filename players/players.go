@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/carbon-12/go-games/base"
+	"github.com/andrew-j-armstrong/go-games/base"
 )
 
 func ChoosePlayer(game base.Game, gameState base.GameState, playerID base.PlayerID) base.Player {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/carbon-12/go-games/base"
-	"github.com/carbon-12/go-reversi"
+	"github.com/andrew-j-armstrong/go-games/base"
+	"github.com/andrew-j-armstrong/go-reversi"
 )
 
 type Reversi struct {

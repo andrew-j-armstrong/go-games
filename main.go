@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/carbon-12/go-games/base"
-	connect4 "github.com/carbon-12/go-games/games/connect4"
-	reversi "github.com/carbon-12/go-games/games/reversi"
-	"github.com/carbon-12/go-games/players"
+	"github.com/andrew-j-armstrong/go-games/base"
+	connect4 "github.com/andrew-j-armstrong/go-games/games/connect4"
+	reversi "github.com/andrew-j-armstrong/go-games/games/reversi"
+	"github.com/andrew-j-armstrong/go-games/players"
 )
 
 func parseGame(gameName string) (base.Game, error) {

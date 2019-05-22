@@ -1,7 +1,7 @@
 package base
 
 import (
-	"github.com/carbon-12/go-extensions"
+	"github.com/andrew-j-armstrong/go-extensions"
 )
 
 type GameState interface {

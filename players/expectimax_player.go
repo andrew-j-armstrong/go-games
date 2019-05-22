@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/carbon-12/go-expectimax"
-	"github.com/carbon-12/go-extensions"
-	"github.com/carbon-12/go-games/base"
+	"github.com/andrew-j-armstrong/go-expectimax"
+	"github.com/andrew-j-armstrong/go-extensions"
+	"github.com/andrew-j-armstrong/go-games/base"
 )
 
 func getExpectimaxHeuristic(heuristic base.Heuristic) expectimax.ExpectimaxHeuristic {

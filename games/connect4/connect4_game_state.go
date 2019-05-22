@@ -1,9 +1,9 @@
 package games_connect4
 
 import (
-	"github.com/carbon-12/go-connect4"
-	"github.com/carbon-12/go-extensions"
-	"github.com/carbon-12/go-games/base"
+	"github.com/andrew-j-armstrong/go-connect4"
+	"github.com/andrew-j-armstrong/go-extensions"
+	"github.com/andrew-j-armstrong/go-games/base"
 )
 
 type Connect4GameState struct {

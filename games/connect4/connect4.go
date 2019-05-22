@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/carbon-12/go-connect4"
-	"github.com/carbon-12/go-games/base"
+	"github.com/andrew-j-armstrong/go-connect4"
+	"github.com/andrew-j-armstrong/go-games/base"
 )
 
 type Connect4 struct {
