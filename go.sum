@@ -2,6 +2,8 @@ github.com/andrew-j-armstrong/go-connect4 v1.0.0 h1:LRYC30Uv0dk272/a3O+oN8dzTj4t
 github.com/andrew-j-armstrong/go-connect4 v1.0.0/go.mod h1:RZR+4Ev1Kb3IajsJFtf9qkU6CQ1dxbTR+JkppLzFqsw=
 github.com/andrew-j-armstrong/go-expectimax v1.0.0 h1:D4gTHCwgL1hSp/bYu5/JmIm1PPGBAhONNWZ9zOWztaI=
 github.com/andrew-j-armstrong/go-expectimax v1.0.0/go.mod h1:BJYogCMUPVLd89qpiT/IExwyBD3ZUdzaRVjaHv5rCcc=
+github.com/andrew-j-armstrong/go-expectimax v1.1.0 h1:xmpZVgDebMEUQfMR8+/7irTS+6Mo7FJ0KrKr9KlDzDw=
+github.com/andrew-j-armstrong/go-expectimax v1.1.0/go.mod h1:BJYogCMUPVLd89qpiT/IExwyBD3ZUdzaRVjaHv5rCcc=
 github.com/andrew-j-armstrong/go-extensions v1.0.0 h1:ZuZu34TpE538xKaCrYm8eJgNrpRIfJ8N93sKZkvjLy8=
 github.com/andrew-j-armstrong/go-extensions v1.0.0/go.mod h1:asEpr53eH4e/i37IHjxrt5ANpe3D4w32+Ks2uRSk+R4=
 github.com/andrew-j-armstrong/go-reversi v1.0.0 h1:HaYx/WOza3S0dVJ9a1UQPTOUY9c/xSBJ1b910ixerGU=

@@ -137,9 +137,13 @@ func (player *ExpectimaxPlayer) calculateChildLikelihood(getGameState func() exp
 	}
 }
 
-func NewExpectimaxPlayer(gameState base.GameState, playerID base.PlayerID, heuristic base.Heuristic, difficulty float64, maxSearchTime time.Duration) *ExpectimaxPlayer {
+func NewExpectimaxPlayer(gameState base.GameState, playerID base.PlayerID, heuristic base.Heuristic, difficulty float64, maxSearchTime time.Duration, printPlayerDebugOutput bool) *ExpectimaxPlayer {
 	player := &ExpectimaxPlayer{gameState, playerID, nil, difficulty, time.Time{}, maxSearchTime}
-	player.expectimaxBase = expectimax.NewExpectimax(gameState, getExpectimaxHeuristic(heuristic), player.calculateChildLikelihood, 1000000)
+	if printPlayerDebugOutput {
+		player.expectimaxBase = expectimax.NewDebugExpectimax(gameState, getExpectimaxHeuristic(heuristic), player.calculateChildLikelihood, 1000000)
+	} else {
+		player.expectimaxBase = expectimax.NewExpectimax(gameState, getExpectimaxHeuristic(heuristic), player.calculateChildLikelihood, 1000000)
+	}
 	go player.Run()
 	return player
 }

@@ -10,7 +10,7 @@ import (
 	"github.com/andrew-j-armstrong/go-games/base"
 )
 
-func ChoosePlayer(game base.Game, gameState base.GameState, playerID base.PlayerID) base.Player {
+func ChoosePlayer(game base.Game, gameState base.GameState, playerID base.PlayerID, printPlayerDebugOutput bool) base.Player {
 	for {
 		fmt.Printf("Choose player %s:\n", playerID.String())
 		fmt.Printf("1: Human\n")
@@ -31,7 +31,7 @@ func ChoosePlayer(game base.Game, gameState base.GameState, playerID base.Player
 		case 4:
 			difficulty := chooseExpectimaxDifficulty()
 			duration := chooseExpectimaxDuration()
-			expectimaxPlayer := NewExpectimaxPlayer(gameState, playerID, game.ChooseHeuristic(playerID), difficulty, duration)
+			expectimaxPlayer := NewExpectimaxPlayer(gameState, playerID, game.ChooseHeuristic(playerID), difficulty, duration, printPlayerDebugOutput)
 			return expectimaxPlayer
 		}
 
@@ -41,7 +41,7 @@ func ChoosePlayer(game base.Game, gameState base.GameState, playerID base.Player
 
 var playerDescriptionRegex = regexp.MustCompile(`(human)|(random)|(heuristic)/(simple|viability|viabilityextended)|(expectimax)/(simple|viability|viabilityextended)/(\d+)/(\d+)`)
 
-func ParsePlayer(game base.Game, gameState base.GameState, playerID base.PlayerID, playerDescription string) (base.Player, error) {
+func ParsePlayer(game base.Game, gameState base.GameState, playerID base.PlayerID, playerDescription string, printPlayerDebugOutput bool) (base.Player, error) {
 	match := playerDescriptionRegex.FindStringSubmatch(playerDescription)
 	if match == nil {
 		log.Fatal("invalid player description", playerDescription)
@@ -68,7 +68,7 @@ func ParsePlayer(game base.Game, gameState base.GameState, playerID base.PlayerI
 		maxDurationMilliseconds, _ := strconv.Atoi(match[8])
 		maxDuration := time.Duration(maxDurationMilliseconds) * time.Millisecond
 
-		expectimaxPlayer := NewExpectimaxPlayer(gameState, playerID, heuristic, difficulty, maxDuration)
+		expectimaxPlayer := NewExpectimaxPlayer(gameState, playerID, heuristic, difficulty, maxDuration, printPlayerDebugOutput)
 
 		go expectimaxPlayer.Run()
 		return expectimaxPlayer, nil

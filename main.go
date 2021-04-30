@@ -37,9 +37,15 @@ func main() {
 	makeMovePtr := flag.String("makeMove", "", "Make this move")
 	//nextPlayerPtr := flag.String("nextPlayer", "", "Next player description")
 	gamePtr := flag.String("game", "", "Game to play (connect4)")
+	debugOutputPtr := flag.Bool("debugOutput", false, "Print debug output")
 	printAfterMovePtr := flag.Bool("printAfterMove", false, "Print the game state after each move")
 
 	flag.Parse()
+
+	if *gamePtr == "" {
+		flag.PrintDefaults()
+		return
+	}
 
 	var game base.Game
 	var err error
@@ -95,18 +101,18 @@ func main() {
 
 	if *runGamePtr {
 		if *player1Ptr == "" {
-			player1 = players.ChoosePlayer(game, gameState, base.Player1)
+			player1 = players.ChoosePlayer(game, gameState, base.Player1, *debugOutputPtr)
 		} else {
-			player1, err = players.ParsePlayer(game, gameState, base.Player1, *player1Ptr)
+			player1, err = players.ParsePlayer(game, gameState, base.Player1, *player1Ptr, *debugOutputPtr)
 			if err != nil {
 				log.Fatal(err)
 			}
 		}
 
 		if *player2Ptr == "" {
-			player2 = players.ChoosePlayer(game, gameState, base.Player2)
+			player2 = players.ChoosePlayer(game, gameState, base.Player2, *debugOutputPtr)
 		} else {
-			player2, err = players.ParsePlayer(game, gameState, base.Player2, *player2Ptr)
+			player2, err = players.ParsePlayer(game, gameState, base.Player2, *player2Ptr, *debugOutputPtr)
 			if err != nil {
 				log.Fatal(err)
 			}
